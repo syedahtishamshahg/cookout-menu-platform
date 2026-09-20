@@ -1,0 +1,3 @@
+import {menuItems} from "@/lib/menu"; export const metadata={title:"Cook Out Menu",description:"Browse the independent Cook Out menu information resource."};
+const groups=[...new Set(menuItems.map(x=>x.category))];
+export default function Menu(){return <main className="container section"><div className="eyebrow">Menu Explorer</div><h1>Cook Out Menu</h1><p className="muted">Browse categories and open individual items for available details, nutrition and source information.</p>{groups.map(g=><section key={g} style={{marginTop:32}}><h2>{g}</h2><div className="grid">{menuItems.filter(x=>x.category===g).map(x=><a className="card" href={"/menu/"+x.slug} key={x.slug}><h3>{x.name}</h3><p className="muted">{x.description}</p></a>)}</div></section>)}</main>}
