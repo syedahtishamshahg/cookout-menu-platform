@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next"; export default function manifest():MetadataRoute.Manifest{return{name:"Cook Out Menu & Prices",short_name:"Cook Out Menu",description:"Independent Cook Out menu, prices, nutrition, locations and tools.",start_url:"/",display:"standalone",lang:"en"}}
