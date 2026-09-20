@@ -1,0 +1,3 @@
+export type PriceRecord={id:string;itemId:string;locationId:string;amount:number;currency:"USD";capturedAt:string;verifiedAt?:string;confidence:"high"|"medium"|"low";status:"verified"|"unverified"|"stale"|"rejected";sourceId:string};
+export const prices:PriceRecord[]=[];
+export function formatPrice(amount:number,currency="USD"){return new Intl.NumberFormat("en-US",{style:"currency",currency}).format(amount);}
