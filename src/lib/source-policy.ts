@@ -1,0 +1,2 @@
+export const sourcePolicy={primary:["Official Cook Out materials","Direct restaurant/location information"],secondary:["Reputable secondary sources with attribution"],unverified:["User submissions until reviewed"]} as const;
+export function canPublish(status:"verified"|"unverified"|"stale"|"rejected"){return status==="verified";}
