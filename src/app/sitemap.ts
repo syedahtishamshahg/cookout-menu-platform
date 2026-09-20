@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function sitemap():MetadataRoute.Sitemap{return["/","/menu/","/menu/prices/","/menu/trays/","/menu/burgers/","/menu/chicken/","/menu/bbq/","/menu/hot-dogs/","/menu/sides/","/menu/quesadillas/","/menu/wraps/","/menu/milkshakes/","/nutrition/","/locations/","/hours/","/tools/tray-builder/","/tools/shake-mixer/","/about/","/methodology/","/sources/","/corrections/","/contact/","/privacy/","/terms/","/disclaimer/"].map(path=>({url:"https://cookout-menu-platform.pages.dev"+path}))}
