@@ -1,0 +1,1 @@
+export default function Health(){return <main className="container section"><div className="card"><div className="eyebrow">System</div><h1>System Status</h1><p className="muted">The application foundation is available. Live database and external service status should be checked from the production environment.</p></div></main>}
