@@ -1,0 +1,3 @@
+# Local development only. Never commit real values.
+ADMIN_AUTH_SECRET="generate-a-long-random-secret"
+TURNSTILE_SECRET_KEY="your-local-test-secret"
