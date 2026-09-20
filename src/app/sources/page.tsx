@@ -1,0 +1,3 @@
+import {sourcePolicy} from "@/lib/source-policy";
+export const metadata={title:"Sources"};
+export default function Sources(){return <main className="container section"><div className="eyebrow">Transparency</div><h1>Sources</h1><div className="grid" style={{marginTop:24}}><div className="card"><h2>Primary</h2>{sourcePolicy.primary.map(x=><p key={x}>{x}</p>)}</div><div className="card"><h2>Secondary</h2>{sourcePolicy.secondary.map(x=><p key={x}>{x}</p>)}</div><div className="card"><h2>Unverified</h2>{sourcePolicy.unverified.map(x=><p key={x}>{x}</p>)}</div></div></main>}
