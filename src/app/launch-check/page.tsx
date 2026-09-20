@@ -1,0 +1,3 @@
+import {productionGates} from "@/lib/production-check";
+export const metadata={title:"Production Launch Check"};
+export default function LaunchCheck(){return <main className="container section"><div className="eyebrow">Engineering</div><h1>Production Launch Check</h1><p className="muted">A transparent checklist prevents a development build from being mistaken for a production-ready service.</p><div className="card" style={{marginTop:24}}>{productionGates.map(g=><div key={g.id} style={{padding:"16px 0",borderBottom:"1px solid var(--border)"}}><strong>{g.label}</strong><span style={{marginLeft:12}}>{g.status.toUpperCase()}</span><p className="muted">{g.detail}</p></div>)}</div></main>}
