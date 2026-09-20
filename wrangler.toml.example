@@ -1,0 +1,10 @@
+name = "cookout-menu-platform"
+compatibility_date = "2026-09-21"
+
+# Copy this file to wrangler.toml after creating the real D1 database.
+# Never commit production secrets.
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "cookout-menu"
+# database_id = "REPLACE_WITH_REAL_CLOUDFLARE_D1_DATABASE_ID"
