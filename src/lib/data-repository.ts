@@ -1,0 +1,5 @@
+import {getDatabase} from "@/lib/db";
+export async function listNutrition(env:Record<string,unknown>){const db=getDatabase(env);return (await db.prepare("SELECT n.*,m.name,m.slug FROM nutrition n JOIN menu_items m ON m.id=n.menu_item_id ORDER BY m.name").all()) as unknown;}
+export async function listVerifiedPrices(env:Record<string,unknown>){const db=getDatabase(env);return (await db.prepare("SELECT p.*,m.name,m.slug,l.city,l.state_name,l.address FROM prices p JOIN menu_items m ON m.id=p.menu_item_id LEFT JOIN locations l ON l.id=p.location_id WHERE p.status='verified' ORDER BY m.name").all()) as unknown;}
+export async function listLocations(env:Record<string,unknown>){const db=getDatabase(env);return (await db.prepare("SELECT * FROM locations WHERE status='active' ORDER BY state_name,city").all()) as unknown;}
+export async function getPriceHistory(env:Record<string,unknown>,itemId:string,locationId:string){const db=getDatabase(env);return (await db.prepare("SELECT * FROM price_history WHERE menu_item_id=? AND location_id=? ORDER BY effective_at DESC").bind(itemId,locationId).all()) as unknown;}
