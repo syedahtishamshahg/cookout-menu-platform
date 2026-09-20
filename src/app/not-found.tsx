@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="container section"><div className="card"><div className="eyebrow">404</div><h1>Page not found</h1><p className="muted">The page may have moved or does not exist yet.</p><a className="btn" href="/">Back home</a></div></main>}
