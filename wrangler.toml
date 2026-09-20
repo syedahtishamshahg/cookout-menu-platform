@@ -1,0 +1,8 @@
+name = "cookout-menu-platform"
+compatibility_date = "2026-09-21"
+
+# Add the real Cloudflare D1 database ID after creating the database.
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "cookout-menu"
+# database_id = "REPLACE_WITH_REAL_DATABASE_ID"
