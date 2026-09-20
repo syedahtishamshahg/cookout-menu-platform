@@ -1,0 +1,3 @@
+import {reviewQueue} from "@/lib/admin";
+export const metadata={title:"Admin Review Queue"};
+export default function Reviews(){return <main className="container section"><div className="eyebrow">Admin</div><h1>Verification Queue</h1><p className="muted">Production review actions must be protected by server-side authentication and role checks.</p><div className="card" style={{marginTop:24}}>{reviewQueue.length?<ul>{reviewQueue.map(x=><li key={x.id}>{x.title} — {x.status}</li>)}</ul>:<p>No pending records yet.</p>}</div></main>}
