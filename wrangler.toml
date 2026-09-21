@@ -14,3 +14,4 @@ enabled = true
 binding = "DB"
 database_name = "cookout-menu"
 database_id = "fb7dd4ba-7c20-401e-a81a-40d425ad5f96"
+migrations_dir = "db/migrations"
