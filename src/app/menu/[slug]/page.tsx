@@ -1,4 +1,33 @@
-import {menuItems} from "@/lib/menu"; import {notFound} from "next/navigation"; import type {Metadata} from "next";
-export function generateStaticParams(){return menuItems.map(x=>({slug:x.slug}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const item=menuItems.find(x=>x.slug===slug);return item?{title:item.name,description:item.description,alternates:{canonical:"/menu/"+item.slug}}:{title:"Menu Item"};}
-export default async function ItemPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const item=menuItems.find(x=>x.slug===slug);if(!item)notFound();const related=menuItems.filter(x=>x.category===item.category&&x.slug!==item.slug).slice(0,4);return <main className="container section"><nav aria-label="Breadcrumb" className="muted"><a href="/menu/">Menu</a> / {item.category} / {item.name}</nav><div className="eyebrow" style={{marginTop:16}}>{item.category}</div><h1>{item.name}</h1><p className="muted">{item.description}</p><div className="grid" style={{marginTop:24}}><div className="card"><h2>Nutrition</h2><p><strong>{item.nutrition?.calories}</strong> calories</p><p>{item.nutrition?.protein_g}g protein</p><p>{item.nutrition?.sodium_mg}mg sodium</p><p className="muted">Confirm nutrition against the cited source before relying on it.</p></div><div className="card"><h2>Price</h2><p>Prices vary by location.</p><a className="btn" href="/menu/prices/">View price information</a></div><div className="card"><h2>Source & verification</h2><p>Source-backed development data.</p><p className="muted">Live verification dates will come from D1 when configured.</p><a href="/sources/">View source policy</a></div></div>{related.length>0&&<section style={{marginTop:36}}><h2>Related {item.category}</h2><div className="grid">{related.map(x=><a className="card" href={"/menu/"+x.slug} key={x.slug}><h3>{x.name}</h3><p className="muted">{x.description}</p></a>)}</div></section>}<p style={{marginTop:28}}><a href="/menu/">← Back to menu</a></p></main>}
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import type {Metadata} from "next";
+import {findMenuItem,getNutritionForItem} from "@/lib/repository";
+
+export const dynamic="force-dynamic";
+
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
+  const {slug}=await params;
+  const item=await findMenuItem(undefined,slug);
+  return item?{title:item.name+" | Cook Out Menu",description:item.description??"Cook Out menu item information.",alternates:{canonical:"/menu/"+item.slug}}:{title:"Menu Item"};
+}
+
+export default async function ItemPage({params}:{params:Promise<{slug:string}>}){
+  const {slug}=await params;
+  const item=await findMenuItem(undefined,slug);
+  if(!item)notFound();
+  const nutrition=await getNutritionForItem(undefined,item.id);
+  return <main className="container section">
+    <nav aria-label="Breadcrumb" className="muted"><Link href="/menu/">Menu</Link> / {item.category_name} / {item.name}</nav>
+    <div className="eyebrow" style={{marginTop:16}}>{item.category_name}</div>
+    <h1>{item.name}</h1>
+    <p className="muted">{item.description}</p>
+    <div className="grid" style={{marginTop:24}}>
+      <div className="card"><h2>Nutrition</h2>
+        {nutrition?<><p><strong>{nutrition.calories??"—"}</strong> calories</p><p>{nutrition.protein_g??"—"}g protein</p><p>{nutrition.sodium_mg??"—"}mg sodium</p><p className="muted">Verified: {nutrition.verified_at??"Source date not recorded"}</p></>:<p className="muted">Nutrition data is not currently published for this item.</p>}
+      </div>
+      <div className="card"><h2>Price</h2><p>Prices vary by location and are not published here until source-verified.</p><Link className="btn" href="/menu/prices/">View price information</Link></div>
+      <div className="card"><h2>Source & verification</h2><p>Data is served from the site's D1 database.</p><p className="muted">This is an independent, unofficial information resource.</p><Link href="/sources/">View source policy</Link></div>
+    </div>
+    <p style={{marginTop:28}}><Link href="/menu/">← Back to menu</Link></p>
+  </main>;
+}
