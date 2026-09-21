@@ -1,4 +1,4 @@
-import { env as cloudflareEnv } from "cloudflare:workers";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export type D1DatabaseLike = {
   prepare: (query: string) => {
@@ -11,7 +11,8 @@ export type D1DatabaseLike = {
 
 export function getDatabase(overrideEnv?: Record<string, unknown>) {
   const runtimeEnv =
-    overrideEnv ?? (cloudflareEnv as unknown as Record<string, unknown>);
+    overrideEnv ??
+    (getCloudflareContext().env as unknown as Record<string, unknown>);
   const db = runtimeEnv.DB as D1DatabaseLike | undefined;
 
   if (!db) {
