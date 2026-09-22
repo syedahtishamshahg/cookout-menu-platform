@@ -32,7 +32,7 @@ export default function Home() {
             <a href="/locations/">Locations</a>
             <a href="/tools/tray-builder/">Tools</a>
           </nav>
-          <a className="nav-search" href="/search/" aria-label="Search">⌕ <span>Search</span></a>
+          <div className="nav-actions"><a className="nav-ai" href="/ai/">✦ <span>Ask AI</span></a><a className="nav-search" href="/search/" aria-label="Search">⌕ <span>Search</span></a></div>
         </div>
       </header>
 
