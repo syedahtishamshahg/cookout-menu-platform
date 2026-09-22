@@ -17,7 +17,7 @@ export default function AIPage() {
             <div className="ai-capabilities">
               <span>Menu</span><span>Nutrition</span><span>Prices</span><span>Trays</span><span>Shakes</span><span>Locations</span>
             </div>
-            <button className="btn btn-dark" onClick={() => document.getElementById("ai-chat-anchor")?.scrollIntoView({ behavior: "smooth" })}>Start asking →</button>
+            <a className="btn btn-dark" href="#ai-chat-anchor">Start asking →</a>
           </div>
           <div className="ai-hero-art">
             <div className="ai-orbit-large" />
