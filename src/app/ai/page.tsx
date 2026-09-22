@@ -31,7 +31,7 @@ export default function AIPage() {
       <section className="ai-workbench" id="ai-chat-anchor">
         <div className="container">
           <div className="ai-workbench-head"><span className="kicker">AI WORKBENCH</span><h2>Ask naturally. Explore deeper.</h2><p>The assistant uses our published menu and nutrition database and is designed not to invent missing facts.</p></div>
-          <div className="ai-embed"><AIAssistant /></div>
+          <div className="ai-embed"><AIAssistant embedded /></div>
         </div>
       </section>
     </main>
