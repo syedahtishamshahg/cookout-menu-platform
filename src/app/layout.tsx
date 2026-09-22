@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AIAssistant from "@/components/ai-assistant";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cookout-menu-platform.syedahtishamshahg.workers.dev"),
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}<div id="ai-assistant-root"><a href="/ai/">Cook Out Menu AI</a></div></body></html>;
+  return <html lang="en"><body>{children}<AIAssistant /></body></html>;
 }
