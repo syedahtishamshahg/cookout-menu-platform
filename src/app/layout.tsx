@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}<div id="ai-assistant-root"><a href="/ai/">Cook Out Menu AI</a></div></body></html>;
 }
