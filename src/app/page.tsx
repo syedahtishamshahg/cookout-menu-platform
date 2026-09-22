@@ -1,124 +1,114 @@
-const tools = [
-  { title: "Explore Menu", text: "Browse categories, items and source-backed details.", href: "/menu/", icon: "🍔", tone: "warm" },
-  { title: "Prices", text: "See price information only when it can be verified.", href: "/menu/prices/", icon: "$", tone: "green" },
-  { title: "Tray Builder", text: "Build a tray and preview your meal combination.", href: "/tools/tray-builder/", icon: "▣", tone: "red" },
-  { title: "Shake Mixer", text: "Create a two-flavor shake combination.", href: "/tools/shake-mixer/", icon: "🥤", tone: "purple" },
-  { title: "Nutrition", text: "Compare calories, protein and sodium.", href: "/nutrition/", icon: "◔", tone: "blue" },
-  { title: "Locations", text: "Explore the location directory as it grows.", href: "/locations/", icon: "⌖", tone: "orange" },
+import AIAssistant from "@/components/ai-assistant";
+
+const discovery = [
+  ["MENU INDEX","Every category, searchable","/menu/","01"],
+  ["PRICE INTELLIGENCE","Location-aware pricing","/menu/prices/","02"],
+  ["NUTRITION LAB","Calories, protein & sodium","/nutrition/","03"],
+  ["TRAY STUDIO","Build a custom meal","/tools/tray-builder/","04"],
+  ["SHAKE LAB","Mix two flavors","/tools/shake-mixer/","05"],
+  ["LOCATION FINDER","Explore stores & hours","/locations/","06"],
 ];
 
 const categories = [
-  ["Burgers", "/menu/burgers/"],
-  ["Chicken", "/menu/chicken/"],
-  ["BBQ", "/menu/bbq/"],
-  ["Hot Dogs", "/menu/hot-dogs/"],
-  ["Wraps", "/menu/wraps/"],
-  ["Milkshakes", "/menu/milkshakes/"],
+  ["BURGERS","01","/menu/burgers/"],
+  ["CHICKEN","02","/menu/chicken/"],
+  ["BBQ","03","/menu/bbq/"],
+  ["HOT DOGS","04","/menu/hot-dogs/"],
+  ["WRAPS","05","/menu/wraps/"],
+  ["MILKSHAKES","06","/menu/milkshakes/"],
 ];
 
 export default function Home() {
   return (
-    <>
-      <header className="site-header">
-        <div className="container nav">
-          <a className="brand" href="/" aria-label="Cook Out Menu home">
-            <span className="brand-mark">CO</span>
-            <span>Cook Out <em>Menu</em></span>
+    <div className="new-home">
+      <header className="new-header">
+        <div className="container new-nav">
+          <a className="new-brand" href="/" aria-label="Cook Out Menu">
+            <span className="new-brand-symbol">C</span>
+            <span>COOK OUT <i>INDEX</i></span>
           </a>
-          <nav className="navlinks" aria-label="Main navigation">
-            <a href="/menu/">Menu</a>
-            <a href="/menu/prices/">Prices</a>
-            <a href="/nutrition/">Nutrition</a>
-            <a href="/locations/">Locations</a>
-            <a href="/tools/tray-builder/">Tools</a>
+          <nav className="new-navlinks" aria-label="Main navigation">
+            <a href="/menu/">Menu</a><a href="/menu/prices/">Prices</a><a href="/nutrition/">Nutrition</a><a href="/locations/">Locations</a><a href="/tools/">Tools</a>
           </nav>
-          <div className="nav-actions"><a className="nav-ai" href="/ai/">✦ <span>Ask AI</span></a><a className="nav-search" href="/search/" aria-label="Search">⌕ <span>Search</span></a></div>
+          <div className="new-nav-actions">
+            <a className="new-ai-link" href="/ai/">✦ Ask AI</a>
+            <a className="new-search-link" href="/search/">⌕</a>
+          </div>
         </div>
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-glow hero-glow-one" />
-          <div className="hero-glow hero-glow-two" />
-          <div className="container hero-inner">
-            <div className="hero-copy">
-              <div className="eyebrow"><span className="live-dot" /> Independent &amp; unofficial information resource</div>
-              <h1>Cook Out menu.<br /><span>Made easier to explore.</span></h1>
-              <p className="hero-lede">Menus, nutrition, prices, locations and interactive tools — organized in one clean place.</p>
-              <form className="search search-hero" action="/search">
-                <span className="search-icon">⌕</span>
-                <input name="q" placeholder="Search menu, nutrition, shakes..." aria-label="Search Cook Out" />
-                <button className="btn btn-dark" type="submit">Search</button>
+        <section className="index-hero">
+          <div className="index-grid-lines" />
+          <div className="container index-hero-inner">
+            <div className="index-hero-copy">
+              <div className="index-kicker"><span /> INDEPENDENT MENU INTELLIGENCE · 2026</div>
+              <h1>The Cook Out<br /><em>menu, decoded.</em></h1>
+              <p>Search the menu. Compare nutrition. Build a tray. Explore prices by location. Then ask AI anything.</p>
+              <form className="index-search" action="/search">
+                <span>⌕</span><input name="q" placeholder="Search burgers, shakes, calories, prices..." aria-label="Search Cook Out" /><button>SEARCH</button>
               </form>
-              <div className="hero-links">
-                <a href="/menu/">Browse the menu →</a>
-                <a href="/tools/tray-builder/">Build a tray →</a>
+              <div className="index-hero-links"><a href="/menu/">EXPLORE MENU <b>↗</b></a><a href="/ai/">ASK COOK OUT AI <b>✦</b></a></div>
+            </div>
+            <div className="index-hero-visual" aria-hidden="true">
+              <div className="orbit orbit-a" /><div className="orbit orbit-b" />
+              <div className="burger-stack">
+                <div className="stack-bun" /><div className="stack-lettuce" /><div className="stack-cheese" /><div className="stack-meat" /><div className="stack-cheese second" /><div className="stack-meat second" /><div className="stack-bun bottom" />
               </div>
+              <span className="visual-tag tag-one">MENU<br /><b>90+</b> SIGNALS</span>
+              <span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span>
+              <span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span>
             </div>
-            <div className="hero-card">
-              <div className="hero-card-top"><span>QUICK LOOK</span><span className="verified-pill">● Source-aware</span></div>
-              <div className="hero-food">
-                <div className="food-orbit orbit-one" />
-                <div className="food-orbit orbit-two" />
-                <div className="burger-art" aria-hidden="true"><span className="bun-top" /><span className="patty" /><span className="cheese" /><span className="patty patty-two" /><span className="bun-bottom" /></div>
-              </div>
-              <div className="hero-card-bottom"><strong>Explore what you need</strong><span>Menu · Nutrition · Tools</span></div>
-            </div>
+          </div>
+          <div className="container hero-ticker"><span>SCROLL TO EXPLORE</span><i /> <span>UNOFFICIAL · INDEPENDENT · SOURCE-AWARE</span></div>
+        </section>
+
+        <section className="index-statement">
+          <div className="container statement-grid">
+            <div><span className="index-label">01 / THE IDEA</span><h2>Not another<br /><em>menu list.</em></h2></div>
+            <div className="statement-copy"><p>We are building a practical Cook Out intelligence layer — part menu guide, part nutrition explorer, part price tracker, part AI assistant.</p><p>Information is separated from estimates, location variation is surfaced, and important claims stay tied to sources.</p><a href="/methodology/">READ OUR METHODOLOGY ↗</a></div>
           </div>
         </section>
 
-        <section className="section quick-section">
+        <section className="index-discovery">
           <div className="container">
-            <div className="section-heading"><div><span className="kicker">START HERE</span><h2>Everything in one place.</h2></div><a className="text-link" href="/menu/">View all →</a></div>
-            <div className="tool-grid">
-              {tools.map((tool) => (
-                <a className={"tool-card " + tool.tone} href={tool.href} key={tool.href}>
-                  <div className="tool-icon">{tool.icon}</div>
-                  <div><h3>{tool.title}</h3><p>{tool.text}</p></div>
-                  <span className="arrow">↗</span>
-                </a>
-              ))}
+            <div className="index-section-head"><div><span className="index-label">02 / DISCOVER</span><h2>One system.<br /><em>Six ways in.</em></h2></div><a href="/tools/">ALL TOOLS ↗</a></div>
+            <div className="discovery-grid">
+              {discovery.map(([title,text,href,num]) => <a href={href} className="discovery-card" key={href}><span>{num}</span><div><small>{title}</small><h3>{text}</h3></div><b>↗</b></a>)}
             </div>
           </div>
         </section>
 
-        <section className="section category-section">
+        <section className="index-menu">
           <div className="container">
-            <div className="section-heading"><div><span className="kicker">MENU</span><h2>What are you craving?</h2></div><a className="text-link" href="/menu/">Full menu →</a></div>
-            <div className="category-grid">
-              {categories.map(([name, href]) => <a className="category-card" href={href} key={href}><span>{name}</span><b>→</b></a>)}
+            <div className="index-section-head"><div><span className="index-label">03 / MENU INDEX</span><h2>Pick a lane.</h2></div><a href="/menu/">FULL MENU ↗</a></div>
+            <div className="category-index">
+              {categories.map(([name,num,href]) => <a href={href} key={href}><span>{num}</span><strong>{name}</strong><b>↗</b></a>)}
             </div>
           </div>
         </section>
 
-        <section className="trust-section">
-          <div className="container trust-grid">
-            <div><span className="kicker">WHY THIS SITE</span><h2>Useful information without pretending to be official.</h2></div>
-            <div className="trust-copy">
-              <p>Cook Out Menu is an independent information project. We separate sourced data from estimates and show verification details where available.</p>
-              <div className="trust-points"><span>✓ Source-aware data</span><span>✓ Location price caution</span><span>✓ Independent disclosure</span></div>
-              <a className="btn btn-light" href="/methodology/">How we handle data →</a>
-            </div>
+        <section className="ai-feature">
+          <div className="container ai-feature-grid">
+            <div><span className="index-label light">04 / INTELLIGENCE</span><h2>Ask first.<br /><em>Dig deeper.</em></h2><p>Cook Out Menu AI is designed to answer menu, nutrition, price, tray, shake and site questions using the information we actually publish.</p><div className="ai-feature-pills"><span>MENU</span><span>NUTRITION</span><span>TRAYS</span><span>SHAKES</span><span>PRICES</span></div><a className="ai-feature-btn" href="/ai/">OPEN AI WORKBENCH <b>✦</b></a></div>
+            <div className="ai-console"><div className="console-top"><span>CO / AI</span><span>LIVE WORKBENCH</span></div><div className="console-q">“What can I order if I want high protein?”</div><div className="console-line" /><div className="console-answer"><span>AI</span><p>Let’s narrow it down using the nutrition data currently published on this site. I’ll avoid filling gaps with guesses.</p></div><div className="console-input">Ask anything about Cook Out... <b>↑</b></div></div>
           </div>
         </section>
 
-        <section className="section final-cta">
-          <div className="container cta-box">
-            <div><span className="kicker">READY?</span><h2>Find your next Cook Out meal.</h2><p>Start with the menu or build a tray.</p></div>
-            <div className="cta-actions"><a className="btn btn-dark" href="/menu/">Explore Menu</a><a className="btn btn-outline" href="/tools/tray-builder/">Build a Tray</a></div>
+        <section className="index-trust">
+          <div className="container trust-strip">
+            <div><span>✓</span><strong>INDEPENDENT</strong><small>Not affiliated with Cook Out</small></div>
+            <div><span>◉</span><strong>SOURCE-AWARE</strong><small>Facts carry source context</small></div>
+            <div><span>⌁</span><strong>LOCATION-FIRST</strong><small>Prices can vary by restaurant</small></div>
+            <div><span>✦</span><strong>AI-READY</strong><small>Built for useful answers</small></div>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="container footer-grid">
-          <div><a className="brand" href="/"><span className="brand-mark">CO</span><span>Cook Out <em>Menu</em></span></a><p>Independent / unofficial information resource.</p></div>
-          <div><strong>Explore</strong><a href="/menu/">Menu</a><a href="/nutrition/">Nutrition</a><a href="/locations/">Locations</a></div>
-          <div><strong>Tools</strong><a href="/tools/tray-builder/">Tray Builder</a><a href="/tools/shake-mixer/">Shake Mixer</a><a href="/search/">Search</a></div>
-          <div><strong>Trust</strong><a href="/sources/">Sources</a><a href="/methodology/">Methodology</a><a href="/corrections/">Corrections</a></div>
-        </div>
-        <div className="container footer-bottom"><span>© 2026 Cook Out Menu</span><span>Prices and availability can vary by location.</span></div>
+      <footer className="new-footer">
+        <div className="container new-footer-main"><div><a className="new-brand" href="/"><span className="new-brand-symbol">C</span><span>COOK OUT <i>INDEX</i></span></a><p>An independent Cook Out information platform.<br />Useful, source-aware, and built for exploration.</p></div><div><strong>EXPLORE</strong><a href="/menu/">Menu</a><a href="/menu/prices/">Prices</a><a href="/nutrition/">Nutrition</a><a href="/locations/">Locations</a></div><div><strong>TOOLS</strong><a href="/tools/tray-builder/">Tray Builder</a><a href="/tools/shake-mixer/">Shake Mixer</a><a href="/ai/">Ask AI</a><a href="/search/">Search</a></div><div><strong>TRUST</strong><a href="/sources/">Sources</a><a href="/methodology/">Methodology</a><a href="/corrections/">Corrections</a></div></div>
+        <div className="container new-footer-bottom"><span>© 2026 COOK OUT INDEX</span><span>INDEPENDENT / UNOFFICIAL RESOURCE</span></div>
       </footer>
-    </>
+    </div>
   );
 }
