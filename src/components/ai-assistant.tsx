@@ -11,8 +11,8 @@ const starters = [
   "What do you know about Cook Out prices?",
 ];
 
-export default function AIAssistant() {
-  const [open, setOpen] = useState(false);
+export default function AIAssistant({ embedded = false }: { embedded?: boolean }) {
+  const [open, setOpen] = useState(embedded);
   const [messages, setMessages] = useState<Message[]>([
     { role: "assistant", content: "Hi — I’m Cook Out Menu AI. Ask me about menu items, nutrition, prices, trays, shakes, locations or how to use this site." },
   ]);
@@ -83,10 +83,10 @@ export default function AIAssistant() {
         </aside>
       )}
 
-      <button className={"ai-launcher " + (open ? "active" : "")} onClick={() => setOpen((v) => !v)} aria-label="Open Cook Out Menu AI">
+      {!embedded && <button className={"ai-launcher " + (open ? "active" : "")} onClick={() => setOpen((v) => !v)} aria-label="Open Cook Out Menu AI">
         <span className="ai-launcher-icon">✦</span>
         <span><b>Ask AI</b><small>Menu assistant</small></span>
-      </button>
+      </button>}
     </>
   );
 }
