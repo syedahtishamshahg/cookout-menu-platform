@@ -1,2 +1,4 @@
 import type { MetadataRoute } from "next";
-export default function robots():MetadataRoute.Robots{return{rules:{userAgent:"*",allow:"/"},sitemap:"https://cookout-menu-platform.pages.dev/sitemap.xml"}}
+export default function robots():MetadataRoute.Robots{
+  return{rules:{userAgent:"*",allow:"/"},sitemap:"https://cookout-menu-platform.syedahtishamshahg.workers.dev/sitemap.xml"};
+}
