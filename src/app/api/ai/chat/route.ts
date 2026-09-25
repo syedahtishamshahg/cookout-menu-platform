@@ -139,7 +139,7 @@ ${dataContext}`;
     ];
 
     try {
-      const result = await ai.run("@cf/meta/llama-3.2-1b-instruct", {
+      const result = await ai.run("@cf/google/gemma-4-26b-a4b-it", {
         messages: aiMessages,
         max_tokens: 700,
         temperature: 0.45,
