@@ -1,4 +1,4 @@
-import { listMenuItems } from "@/lib/repository";
+import { listCategories, listMenuItems } from "@/lib/repository";
 import MenuExplorer from "@/components/menu-explorer";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function Menu() {
-  const items = await listMenuItems();
+  const [items, categories] = await Promise.all([listMenuItems(), listCategories()]);
   return (
     <main>
       <section className="menu-hero">
@@ -19,7 +19,7 @@ export default async function Menu() {
             <p>Explore the menu by category, search for a favorite, and open each item for nutrition and source details. Prices can vary by location.</p>
             <div className="menu-stats">
               <span><strong>{items.length}</strong> published items</span>
-              <span><strong>5</strong> menu categories</span>
+              <span><strong>{categories.length}</strong> menu categories</span>
               <span><strong>Source-aware</strong> information</span>
             </div>
           </div>
