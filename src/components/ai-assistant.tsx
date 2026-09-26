@@ -122,15 +122,17 @@ export default function AIAssistant({ embedded = false }: { embedded?: boolean }
         body: JSON.stringify({ messages: history.slice(-12) }),
       });
 
-      const data = await response.json().catch(() => ({}));
+      const raw: unknown = await response.json().catch(() => ({}));
+      const data: { answer?: unknown } = raw !== null && typeof raw === "object" ? raw as { answer?: unknown } : {};
+      const answer = typeof data.answer === "string" ? data.answer.trim() : "";
 
-      if (!response.ok || typeof data.answer !== "string" || !data.answer.trim()) {
+      if (!response.ok || !answer) {
         throw new Error("AI response unavailable");
       }
 
       setMessages((current) => [
         ...current,
-        { role: "assistant", content: data.answer.trim() },
+        { role: "assistant", content: answer },
       ]);
     } catch {
       setMessages((current) => [
