@@ -141,3 +141,11 @@ html.dark .ai-workbench{background:#121110}
 .index-hero .index-grid-lines{z-index:-1;opacity:.16}.index-hero .index-hero-copy,.index-hero .index-hero-visual{position:relative;z-index:2}
 @media(max-width:900px){.theme-toggle{top:10px;right:12px;padding:7px 10px}.theme-toggle b{display:none}.index-hero-video-overlay{background:linear-gradient(180deg,rgba(12,10,8,.78),rgba(12,10,8,.55))}}
 @media(prefers-reduced-motion:reduce){.index-hero-video{display:none}}
+
+html.dark h1,html.dark h2,html.dark h3,html.dark h4,html.dark strong,html.dark label,html.dark th,html.dark td{color:var(--ink)}
+html.dark p{color:var(--muted)}
+html.dark a{color:inherit}
+html.dark input,html.dark textarea,html.dark select{background:#1b1917;color:var(--ink);border-color:#403932}
+html.dark input::placeholder,html.dark textarea::placeholder{color:#8f8780}
+html.dark .muted{color:var(--muted)!important}
+html.dark .card,.dark [class*="card"]{background:#1a1816;border-color:#3a342f}
