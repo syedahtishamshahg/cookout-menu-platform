@@ -38,6 +38,19 @@ export default function Home() {
       </header>
       <main>
         <section className="index-hero">
+          <video
+            className="index-hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            poster="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          >
+            <source src="https://cdn.coverr.co/videos/coverr-delicious-cheeseburger-on-rustic-wooden-surface/1080p.mp4" type="video/mp4" />
+          </video>
+          <div className="index-hero-video-overlay" />
           <div className="index-grid-lines" />
           <div className="container index-hero-inner">
             <div className="index-hero-copy">
