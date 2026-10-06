@@ -33,7 +33,7 @@ function localAnswer(question: string) {
   const q = question.toLowerCase().trim();
 
   if (/^(hi|hello|hey|assalam|salam|aoa|good morning|good afternoon|good evening)\b/.test(q)) {
-    return "Hello! 👋 I’m your Cook Out Menu AI assistant. I can help you explore the menu, understand nutrition, compare options, build a tray, discuss prices, find site information, or answer general questions.\n\nWhat would you like to know?";
+    return "Hello! 👋 I’m your Cook Out Assistant assistant. I can help you explore the menu, understand nutrition, compare options, build a tray, discuss prices, find site information, or answer general questions.\n\nWhat would you like to know?";
   }
 
   if (/^(thanks|thank you|thx|shukriya|jazak)/.test(q)) {
@@ -69,8 +69,7 @@ function localAnswer(question: string) {
   }
 
   if (q.includes("tray")) {
-    return "Let’s build your tray. 🍔\n\nTell me three things:\n**1. Main:** burger, chicken, BBQ, hot dog or wrap\n**2. Preference:** filling, lighter, high-protein, spicy, etc.\n**3. Calories:** optional target\n\nThen I can turn that into a clear meal plan using the information available on this site.";
-  }
+    return "Absolutely — let’s build it properly. 🍔🔥\n\n### First: what I can verify\nThe site has published nutrition records for menu items, but it does not yet have a verified universal tray-combination and price table. So I won’t pretend that an unverified combination is an official Cook Out tray.\n\n### If your goal is high protein\n• **Huge Hamburger** — 516 calories · 40g protein · 410mg sodium\n• **Chicken Strip Club** — 846 calories · 39g protein · 2,539mg sodium\n• **BBQ Plate** — 976 calories · 35g protein · 2,445mg sodium\n• **Chicken Strip Sandwich** — 674 calories · 28g protein · 1,804mg sodium\n\n### My recommendation\nTell me your **calorie target** (for example 700, 900 or 1,200), your preferred main (**burger, chicken, BBQ, hot dog or wrap**), and whether you want **high-protein, filling, lighter or spicy**. I’ll then build the most sensible meal plan from the published data, explain the trade-offs, and clearly separate verified facts from assumptions.\n\nThat is the kind of answer I’m designed to give — not just a one-line menu suggestion.
 
   if (q.includes("shake")) {
     return "I can help with Cook Out shakes and combinations, but I don’t want to invent flavor availability or nutrition that we haven’t verified.\n\nTell me the flavor or combination you’re interested in, and I’ll work from the published information available on the site.";
@@ -81,7 +80,7 @@ function localAnswer(question: string) {
   }
 
   if (q.includes("who are you") || q.includes("what are you")) {
-    return "I’m **Cook Out Menu AI**, the conversational assistant built into this independent Cook Out information platform. I’m designed to help with menu discovery, nutrition, prices, trays, shakes, locations and general questions — while avoiding made-up facts when our published data is incomplete.";
+    return "I’m **Cook Out Assistant**, the conversational assistant built into this independent Cook Out information platform. I’m designed to help with menu discovery, nutrition, prices, trays, shakes, locations and general questions — while avoiding made-up facts when our published data is incomplete.";
   }
 
   return "I’m here to help. 😊 I can have a full conversation about the Cook Out information published on this site, and I can also handle general questions when the AI service is available.\n\nTry asking something specific, for example:\n• “What burgers are available?”\n• “Build me a high-protein tray.”\n• “How many calories are in the Huge Hamburger?”\n• “Why do Cook Out prices vary?”\n• “What can I order?”";
@@ -93,7 +92,7 @@ export default function AIAssistant({ embedded = false }: { embedded?: boolean }
     {
       role: "assistant",
       content:
-        "Hi! 👋 I’m Cook Out Menu AI. Ask me anything about the menu, nutrition, prices, trays, shakes, locations or this website. I’ll give you a useful answer and clearly flag information that still needs verification.",
+        "Hi! 👋 I’m Cook Out Assistant. Ask me anything about the menu, nutrition, prices, trays, shakes, locations or this website. I’ll give you a useful answer and clearly flag information that still needs verification.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -157,12 +156,12 @@ export default function AIAssistant({ embedded = false }: { embedded?: boolean }
   return (
     <>
       {open && (
-        <aside className={"ai-panel " + (embedded ? "ai-panel-embedded" : "")} aria-label="Cook Out Menu AI">
+        <aside className={"ai-panel " + (embedded ? "ai-panel-embedded" : "")} aria-label="Cook Out Assistant">
           <div className="ai-panel-head">
             <div className="ai-brand">
               <span className="ai-orb">✦</span>
               <div>
-                <strong>Cook Out Menu AI</strong>
+                <strong>Cook Out Assistant</strong>
                 <small><span className="ai-status-dot" /> Smart assistant · source-aware</small>
               </div>
             </div>
@@ -218,7 +217,7 @@ export default function AIAssistant({ embedded = false }: { embedded?: boolean }
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder="Ask anything about Cook Out…"
-              aria-label="Ask Cook Out Menu AI"
+              aria-label="Ask Cook Out Assistant"
               disabled={busy}
             />
             <button type="submit" disabled={busy || !input.trim()} aria-label="Send question">↑</button>
@@ -231,9 +230,9 @@ export default function AIAssistant({ embedded = false }: { embedded?: boolean }
       )}
 
       {!embedded && (
-        <button type="button" className={"ai-launcher " + (open ? "active" : "")} onClick={() => setOpen((value) => !value)} aria-label="Open Cook Out Menu AI">
+        <button type="button" className={"ai-launcher " + (open ? "active" : "")} onClick={() => setOpen((value) => !value)} aria-label="Open Cook Out Assistant">
           <span className="ai-launcher-icon">✦</span>
-          <span><b>Ask AI</b><small>Smart menu assistant</small></span>
+          <span><b>Ask Assistant</b><small>Powerful menu & meal assistant</small></span>
         </button>
       )}
     </>
