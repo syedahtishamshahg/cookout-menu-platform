@@ -24,7 +24,7 @@ export default function Home() {
       <header className="new-header">
         <div className="container new-nav">
           <a className="new-brand" href="/" aria-label="Cook Out Menu">
-            <span className="new-brand-symbol">C</span>
+            <span className="new-brand-logo" aria-hidden="true">CO</span>
             <span>COOK OUT <i>INDEX</i></span>
           </a>
           <nav className="new-navlinks" aria-label="Main navigation">
@@ -44,16 +44,16 @@ export default function Home() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             aria-hidden="true"
             poster="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1920"
           >
-            <source src="https://cdn.coverr.co/videos/coverr-delicious-cheeseburger-on-rustic-wooden-surface/1080p.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/5920312/5920312-hd_1920_1080_25fps.mp4" type="video/mp4" />
           </video>
           <div className="index-hero-video-overlay" />
           <div className="index-grid-lines" />
           <div className="container index-hero-inner">
-            <div className="index-hero-copy">
+            <a className="hero-logo-lockup" href="/" aria-label="Cook Out Index home"><span className="hero-logo-mark">CO</span><span>COOK OUT <b>INDEX</b></span></a><div className="index-hero-copy">
               <div className="index-kicker"><span /> INDEPENDENT MENU INTELLIGENCE · 2026</div>
               <h1>The Cook Out<br /><em>menu, decoded.</em></h1>
               <p>Search the menu. Compare nutrition. Build a tray. Explore prices by location. Then ask AI anything.</p>
@@ -71,7 +71,7 @@ export default function Home() {
         <section className="index-statement"><div className="container statement-grid"><div><span className="index-label">01 / THE IDEA</span><h2>Not another<br /><em>menu list.</em></h2></div><div className="statement-copy"><p>We are building a practical Cook Out intelligence layer — part menu guide, part nutrition explorer, part price tracker, part AI assistant.</p><p>Information is separated from estimates, location variation is surfaced, and important claims stay tied to sources.</p><a href="/methodology/">READ OUR METHODOLOGY ↗</a></div></div></section>
         <section className="index-discovery"><div className="container"><div className="index-section-head"><div><span className="index-label">02 / DISCOVER</span><h2>One system.<br /><em>Six ways in.</em></h2></div><a href="/tools/">ALL TOOLS ↗</a></div><div className="discovery-grid">{discovery.map(([title,text,href,num]) => <a href={href} className="discovery-card" key={href}><span>{num}</span><div><small>{title}</small><h3>{text}</h3></div><b>↗</b></a>)}</div></div></section>
         <section className="index-menu"><div className="container"><div className="index-section-head"><div><span className="index-label">03 / MENU INDEX</span><h2>Pick a lane.</h2></div><a href="/menu/">FULL MENU ↗</a></div><div className="category-index">{categories.map(([name,num,href]) => <a href={href} key={name}><span>{num}</span><strong>{name}</strong><b>↗</b></a>)}</div></div></section>
-        <section className="ai-feature"><div className="container ai-feature-grid"><div><span className="index-label light">04 / INTELLIGENCE</span><h2>Ask first.<br /><em>Dig deeper.</em></h2><p>Cook Out Menu AI is designed to answer menu, nutrition, price, tray, shake and site questions using the information we actually publish.</p><div className="ai-feature-pills"><span>MENU</span><span>NUTRITION</span><span>TRAYS</span><span>SHAKES</span><span>PRICES</span></div><a className="ai-feature-btn" href="/ai/">OPEN AI WORKBENCH <b>✦</b></a></div><div className="ai-console"><div className="console-top"><span>CO / AI</span><span>LIVE WORKBENCH</span></div><div className="console-q">“What can I order if I want high protein?”</div><div className="console-line" /><div className="console-answer"><span>AI</span><p>Let’s narrow it down using the nutrition data currently published on this site. I’ll avoid filling gaps with guesses.</p></div><div className="console-input">Ask anything about Cook Out... <b>↑</b></div></div></div></section>
+        <section className="ai-feature"><div className="container ai-feature-grid"><div><span className="index-label light">04 / INTELLIGENCE</span><h2>Ask first.<br /><em>Dig deeper.</em></h2><p>Cook Out Assistant is designed to answer menu, nutrition, price, tray, shake and site questions using the information we actually publish.</p><div className="ai-feature-pills"><span>MENU</span><span>NUTRITION</span><span>TRAYS</span><span>SHAKES</span><span>PRICES</span></div><a className="ai-feature-btn" href="/ai/">OPEN COOK OUT ASSISTANT <b>✦</b></a></div><div className="ai-console"><div className="console-top"><span>CO / AI</span><span>LIVE WORKBENCH</span></div><div className="console-q">“What can I order if I want high protein?”</div><div className="console-line" /><div className="console-answer"><span>AI</span><p>Let’s narrow it down using the nutrition data currently published on this site. I’ll avoid filling gaps with guesses.</p></div><div className="console-input">Ask anything about Cook Out... <b>↑</b></div></div></div></section>
         <section className="index-trust"><div className="container trust-strip"><div><span>✓</span><strong>INDEPENDENT</strong><small>Not affiliated with Cook Out</small></div><div><span>◉</span><strong>SOURCE-AWARE</strong><small>Facts carry source context</small></div><div><span>⌁</span><strong>LOCATION-FIRST</strong><small>Prices can vary by restaurant</small></div><div><span>✦</span><strong>AI-READY</strong><small>Built for useful answers</small></div></div></section>
       </main>
       <footer className="new-footer"><div className="container new-footer-main"><div><a className="new-brand" href="/"><span className="new-brand-symbol">C</span><span>COOK OUT <i>INDEX</i></span></a><p>An independent Cook Out information platform.<br />Useful, source-aware, and built for exploration.</p></div><div><strong>EXPLORE</strong><a href="/menu/">Menu</a><a href="/menu/prices/">Prices</a><a href="/nutrition/">Nutrition</a><a href="/locations/">Locations</a></div><div><strong>TOOLS</strong><a href="/tools/tray-builder/">Tray Builder</a><a href="/tools/shake-mixer/">Shake Mixer</a><a href="/ai/">Ask AI</a><a href="/search/">Search</a></div><div><strong>TRUST</strong><a href="/sources/">Sources</a><a href="/methodology/">Methodology</a><a href="/contact/">Contact</a></div></div><div className="container new-footer-bottom"><span>© 2026 COOK OUT INDEX</span><span>INDEPENDENT / UNOFFICIAL RESOURCE</span></div></footer>
