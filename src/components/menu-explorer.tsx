@@ -11,22 +11,22 @@ type Item = {
   last_checked?: string | null;
 };
 
-const PHOTO_BY_CATEGORY: Record<string,string> = {
-  Burgers:"https://images.pexels.com/photos/19247562/pexels-photo-19247562.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Chicken:"https://images.pexels.com/photos/34216153/pexels-photo-34216153.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  BBQ:"https://images.pexels.com/photos/15264024/pexels-photo-15264024.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "Hot Dogs":"https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Wraps:"https://images.pexels.com/photos/12464909/pexels-photo-12464909.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Quesadillas:"https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Sides:"https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Drinks:"https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Desserts:"https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Milkshakes:"https://images.pexels.com/photos/12436857/pexels-photo-12436857.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Trays:"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  Other:"https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1200"
+const PHOTO_BY_ITEM: Record<string,string> = {
+  "small-hamburger":"https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "regular-hamburger":"https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "huge-hamburger":"https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "big-double":"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "char-grilled-chicken-breast":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "hot-crispy-spicy-chicken-breast":"https://images.pexels.com/photos/60616/pexels-photo-60616.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "regular-bbq-sandwich":"https://images.pexels.com/photos/1105325/pexels-photo-1105325.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "hot-dog":"https://images.pexels.com/photos/4676409/pexels-photo-4676409.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "cajun-wrap":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "ranch-wrap":"https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "honey-mustard-wrap":"https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "chicken-strips-3":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1200"
 };
 
-export default function MenuExplorer({ items }: { items: Item[] }) {
+export default function MenuExplorer/({ items }: { items: Item[] }) {
   const categories = Array.from(new Set(items.map((item) => item.category_name || "Other")));
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
@@ -51,14 +51,14 @@ export default function MenuExplorer({ items }: { items: Item[] }) {
         {filtered.length > 0 ? (
           <div className="menu-card-grid">
             {filtered.map((item) => {
-              const photo = PHOTO_BY_CATEGORY[item.category_name || "Other"] || PHOTO_BY_CATEGORY.Other;
+              const photo = PHOTO_BY_ITEM[item.slug] || "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1200";
               return <Link className="menu-item-card" href={"/menu/" + item.slug} key={item.slug}>
                 <div className="menu-item-art"><img src={photo} alt="" loading="lazy" decoding="async" /><span>REAL FOOD PHOTO</span></div>
                 <div className="menu-item-content">
                   <div className="menu-item-meta"><span>{item.category_name || "Menu"}</span>{item.last_checked && <span>Checked {item.last_checked}</span>}</div>
                   <h3>{item.name}</h3>
                   <p>{item.description || "Explore this item for available details, nutrition and sources."}</p>
-                  <div className="menu-photo-note">Representative food photography · not an official Cook Out product image</div>
+                  <div className="menu-photo-note">Representative real food photography · exact Cook Out product image not independently verified</div>
                   <span className="menu-item-link">View details <b>→</b></span>
                 </div>
               </Link>;
