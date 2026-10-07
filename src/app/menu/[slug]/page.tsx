@@ -21,7 +21,7 @@ const PHOTO_BY_ITEM: Record<string,string> = {
   "cajun-wrap":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1400",
   "ranch-wrap":"https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=1400",
   "honey-mustard-wrap":"https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "chicken-strips-3":"https://images.pexels.com/photos/2983099/pexels-photo-2983099.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "chicken-strips-3":"https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1400",
   "bbq-plate":"https://images.pexels.com/photos/1262837/pexels-photo-1262837.jpeg?auto=compress&cs=tinysrgb&w=1400",
   "chicken-strip-sandwich":"https://images.pexels.com/photos/2983099/pexels-photo-2983099.jpeg?auto=compress&cs=tinysrgb&w=1400",
   "chicken-strip-club":"https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1400"
