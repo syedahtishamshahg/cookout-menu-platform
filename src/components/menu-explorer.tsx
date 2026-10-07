@@ -26,7 +26,7 @@ const PHOTO_BY_ITEM: Record<string,string> = {
   "chicken-strips-3":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1200"
 };
 
-export default function MenuExplorer/({ items }: { items: Item[] }) {
+export default function MenuExplorer({ items }: { items: Item[] }) {
   const categories = Array.from(new Set(items.map((item) => item.category_name || "Other")));
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
