@@ -7,18 +7,24 @@ import {breadcrumbJsonLd} from "@/lib/structured-data";
 export const dynamic="force-dynamic";
 
 const PHOTO_BY_ITEM: Record<string,string> = {
-  "small-hamburger":"https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "regular-hamburger":"https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "huge-hamburger":"https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "big-double":"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "char-grilled-chicken-breast":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "hot-crispy-spicy-chicken-breast":"https://images.pexels.com/photos/60616/pexels-photo-60616.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "regular-bbq-sandwich":"https://images.pexels.com/photos/1105325/pexels-photo-1105325.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "hot-dog":"https://images.pexels.com/photos/4676409/pexels-photo-4676409.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "cajun-wrap":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "ranch-wrap":"https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "honey-mustard-wrap":"https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "chicken-strips-3":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  "small-hamburger":"https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "regular-hamburger":"https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "huge-hamburger":"https://images.pexels.com/photos/1556688/pexels-photo-1556688.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "big-double":"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "char-grilled-chicken-breast":"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "hot-crispy-spicy-chicken-breast":"https://images.pexels.com/photos/60616/pexels-photo-60616.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "regular-bbq-sandwich":"https://images.pexels.com/photos/1105325/pexels-photo-1105325.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "hot-dog":"https://images.pexels.com/photos/4676409/pexels-photo-4676409.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "cook-out-style-hot-dog":"https://images.pexels.com/photos/2963454/pexels-photo-2963454.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "mexi-hot-dog":"https://images.pexels.com/photos/2983186/pexels-photo-2983186.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "bacon-cheddar-hot-dog":"https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "cajun-wrap":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "ranch-wrap":"https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "honey-mustard-wrap":"https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "chicken-strips-3":"https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "bbq-plate":"https://images.pexels.com/photos/1262837/pexels-photo-1262837.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "chicken-strip-sandwich":"https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "chicken-strip-club":"https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1400"
 };
 
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const item=await findMenuItem(undefined,slug);return item?{title:item.name+" | Cook Out Menu",description:item.description??"Cook Out menu item information, nutrition and source-aware details.",alternates:{canonical:"/menu/"+item.slug},openGraph:{title:item.name+" | Cook Out Menu",description:item.description??"Cook Out menu item information."}}:{title:"Menu Item"};}
