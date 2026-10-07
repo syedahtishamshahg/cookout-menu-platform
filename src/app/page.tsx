@@ -38,32 +38,38 @@ export default function Home() {
       </header>
       <main>
         <section className="index-hero">
-          <video
-            className="index-hero-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-            poster="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          >
+          <video className="index-hero-video" autoPlay muted loop playsInline preload="auto"
+            poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/P20240118AS-0713.jpg"
+            aria-hidden="true">
             <source src="https://videos.pexels.com/video-files/5920312/5920312-hd_1920_1080_25fps.mp4" type="video/mp4" />
           </video>
           <div className="index-hero-video-overlay" />
           <div className="index-grid-lines" />
           <div className="container index-hero-inner">
-            <div className="hero-logo-lockup"><a href="/" aria-label="Cook Out Index home"><span className="hero-logo-mark">CO</span><span>COOK OUT <b>INDEX</b></span></a></div><div className="index-hero-copy">
+            <div className="hero-logo-lockup">
+              <a href="/" aria-label="Cook Out Index home">
+                <span className="hero-logo-mark">CO</span>
+                <span className="hero-logo-type">COOK OUT <b>INDEX</b></span>
+              </a>
+            </div>
+            <div className="index-hero-copy">
               <div className="index-kicker"><span /> INDEPENDENT MENU INTELLIGENCE · 2026</div>
               <h1>The Cook Out<br /><em>menu, decoded.</em></h1>
               <p>Search the menu. Compare nutrition. Build a tray. Explore prices by location. Then ask AI anything.</p>
               <form className="index-search" action="/search"><span>⌕</span><input name="q" placeholder="Search burgers, shakes, calories, prices..." aria-label="Search Cook Out" /><button>SEARCH</button></form>
               <div className="index-hero-links"><a href="/menu/">EXPLORE MENU <b>↗</b></a><a href="/ai/">ASK COOK OUT AI <b>✦</b></a></div>
             </div>
-            <div className="index-hero-visual" aria-hidden="true"><div className="hero-visual-photo"><img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="" /></div>
-              <div className="orbit orbit-a" /><div className="orbit orbit-b" />
-              <div className="burger-stack"><div className="stack-bun" /><div className="stack-lettuce" /><div className="stack-cheese" /><div className="stack-meat" /><div className="stack-cheese second" /><div className="stack-meat second" /><div className="stack-bun bottom" /></div>
-              <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span><span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span><span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span><span className="visual-tag tag-four">NUTRITION<br /><b>CHECKED</b></span>
+            <div className="index-hero-visual" aria-hidden="true">
+              <div className="hero-feature-panel">
+                <span className="hero-feature-kicker">COOK OUT / FIELD GUIDE</span>
+                <strong>BURGERS · BBQ · CHICKEN · SHAKES</strong>
+                <small>Source-aware menu intelligence</small>
+              </div>
+              <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span>
+              <span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span>
+              <span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span>
+              <span className="visual-tag tag-four">NUTRITION<br /><b>CHECKED</b></span>
+              <span className="visual-tag tag-five">LOCATION<br /><b>SMART</b></span>
             </div>
           </div>
           <div className="container hero-ticker"><span>SCROLL TO EXPLORE</span><i /> <span>UNOFFICIAL · INDEPENDENT · SOURCE-AWARE</span></div>
