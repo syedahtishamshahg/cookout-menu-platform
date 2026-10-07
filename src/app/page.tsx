@@ -1,4 +1,5 @@
 import AIAssistant from "@/components/ai-assistant";
+import HeaderSearch from "@/components/header-search";
 
 const discovery = [
   ["MENU INDEX","Every category, searchable","/menu/","01"],
@@ -32,7 +33,7 @@ export default function Home() {
           </nav>
           <div className="new-nav-actions">
             <a className="new-ai-link" href="/ai/">✦ Ask AI</a>
-            <details className="header-search-wrap"><summary className="new-search-link" aria-label="Open search">⌕</summary><form className="header-search-form" action="/search/"><span>⌕</span><input name="q" placeholder="Search Cook Out..." aria-label="Search Cook Out"/><button type="button" aria-label="Close search">×</button></form></details>
+            <HeaderSearch />
           </div>
         </div>
       </header>
