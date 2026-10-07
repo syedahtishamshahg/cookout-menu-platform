@@ -61,10 +61,9 @@ export default function Home() {
               <div className="index-hero-links"><a href="/menu/">EXPLORE MENU <b>↗</b></a><a href="/ai/">ASK COOK OUT AI <b>✦</b></a></div>
             </div>
             <div className="index-hero-visual" aria-hidden="true">
-              <div className="hero-feature-panel">
-                <span className="hero-feature-kicker">COOK OUT / FIELD GUIDE</span>
-                <strong>BURGERS · BBQ · CHICKEN · SHAKES</strong>
-                <small>Source-aware menu intelligence</small>
+              <div className="hero-feature-photo">
+                <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/P20240118AS-0713.jpg" alt="Real Cook Out restaurant visit with milkshakes, photographed at Cook Out" />
+                <div className="hero-feature-caption"><span>REAL COOK OUT</span><strong>Restaurant · Shakes · Burgers</strong><small>Verified real-world Cook Out photograph</small></div>
               </div>
               <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span>
               <span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span>
