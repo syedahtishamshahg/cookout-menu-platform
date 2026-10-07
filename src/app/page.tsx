@@ -1,4 +1,5 @@
 import AIAssistant from "@/components/ai-assistant";
+import HeaderSearch from "@/components/header-search";
 
 const discovery = [
   ["MENU INDEX","Every category, searchable","/menu/","01"],
@@ -32,7 +33,7 @@ export default function Home() {
           </nav>
           <div className="new-nav-actions">
             <a className="new-ai-link" href="/ai/">✦ Ask AI</a>
-            <a className="new-search-link" href="/search/">⌕</a>
+            <HeaderSearch />
           </div>
         </div>
       </header>
@@ -53,17 +54,17 @@ export default function Home() {
           <div className="index-hero-video-overlay" />
           <div className="index-grid-lines" />
           <div className="container index-hero-inner">
-            <a className="hero-logo-lockup" href="/" aria-label="Cook Out Index home"><span className="hero-logo-mark">CO</span><span>COOK OUT <b>INDEX</b></span></a><div className="index-hero-copy">
+            <div className="hero-logo-lockup"><a href="/" aria-label="Cook Out Index home"><span className="hero-logo-mark">CO</span><span>COOK OUT <b>INDEX</b></span></a></div><div className="index-hero-copy">
               <div className="index-kicker"><span /> INDEPENDENT MENU INTELLIGENCE · 2026</div>
               <h1>The Cook Out<br /><em>menu, decoded.</em></h1>
               <p>Search the menu. Compare nutrition. Build a tray. Explore prices by location. Then ask AI anything.</p>
               <form className="index-search" action="/search"><span>⌕</span><input name="q" placeholder="Search burgers, shakes, calories, prices..." aria-label="Search Cook Out" /><button>SEARCH</button></form>
               <div className="index-hero-links"><a href="/menu/">EXPLORE MENU <b>↗</b></a><a href="/ai/">ASK COOK OUT AI <b>✦</b></a></div>
             </div>
-            <div className="index-hero-visual" aria-hidden="true">
+            <div className="index-hero-visual" aria-hidden="true"><div className="hero-visual-photo"><img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="" /></div>
               <div className="orbit orbit-a" /><div className="orbit orbit-b" />
               <div className="burger-stack"><div className="stack-bun" /><div className="stack-lettuce" /><div className="stack-cheese" /><div className="stack-meat" /><div className="stack-cheese second" /><div className="stack-meat second" /><div className="stack-bun bottom" /></div>
-              <span className="visual-tag tag-one">MENU<br /><b>90+</b> SIGNALS</span><span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span><span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span>
+              <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span><span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span><span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span><span className="visual-tag tag-four">NUTRITION<br /><b>CHECKED</b></span>
             </div>
           </div>
           <div className="container hero-ticker"><span>SCROLL TO EXPLORE</span><i /> <span>UNOFFICIAL · INDEPENDENT · SOURCE-AWARE</span></div>
