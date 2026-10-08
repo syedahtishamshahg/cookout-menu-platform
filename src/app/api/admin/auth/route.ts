@@ -4,7 +4,8 @@ import { getDatabase } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json() as { action?:string; email?:string; password?:string };
+    const contentType=request.headers.get("content-type")||"";
+    const body = contentType.includes("application/json") ? await request.json() as { action?:string; email?:string; password?:string } : Object.fromEntries((await request.formData()).entries()) as { action?:string; email?:string; password?:string };
     const action = body.action || "login";
     const email = String(body.email||"").trim().toLowerCase();
     const password = String(body.password||"");
