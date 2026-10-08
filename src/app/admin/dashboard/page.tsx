@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getAdminFromRequest } from "@/lib/admin-auth";
 import { cookies } from "next/headers";
 
+export const dynamic="force-dynamic";
 export const metadata={title:"Admin Control Center"};
 export default async function Dashboard(){
  const cookieStore=await cookies();
