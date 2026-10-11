@@ -66,5 +66,5 @@ export async function POST(request:Request){
   await db.prepare("UPDATE admin_accounts SET last_login_at=? WHERE id=?").bind(new Date().toISOString(),admin.id).all();
   await audit(admin.id,"login","admin",admin.id);
   return new NextResponse(JSON.stringify({ok:true}),{headers:{"Content-Type":"application/json","Set-Cookie":sessionCookie(token)}});
- }catch{return reply({error:"Authentication service failed. Confirm migrations and Cloudflare Worker secrets."},503);}
+ }catch(err){console.error("[admin-auth] request failed",err instanceof Error?{name:err.name,message:err.message}:String(err));return reply({error:"Authentication service failed. Check Worker logs for [admin-auth] request failed."},503);}
 }
