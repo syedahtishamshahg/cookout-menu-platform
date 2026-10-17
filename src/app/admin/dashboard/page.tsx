@@ -15,13 +15,20 @@ export default async function Dashboard() {
   let stats = { products: 0, categories: 0, nutrition: 0, locations: 0 };
   try {
     const db = getDatabase();
+    const count = async (query: string) => {
+      const result = await db.prepare(query).all();
+      const rows = Array.isArray(result)
+        ? result
+        : (result as { results?: Array<{ n?: number | string }> } | null)?.results ?? [];
+      return Number(rows[0]?.n ?? 0);
+    };
     const [products, categories, nutrition, locations] = await Promise.all([
-      db.prepare("SELECT COUNT(*) AS n FROM menu_items").first<{ n: number }>(),
-      db.prepare("SELECT COUNT(*) AS n FROM menu_categories").first<{ n: number }>(),
-      db.prepare("SELECT COUNT(*) AS n FROM nutrition").first<{ n: number }>(),
-      db.prepare("SELECT COUNT(*) AS n FROM locations").first<{ n: number }>(),
+      count("SELECT COUNT(*) AS n FROM menu_items"),
+      count("SELECT COUNT(*) AS n FROM menu_categories"),
+      count("SELECT COUNT(*) AS n FROM nutrition"),
+      count("SELECT COUNT(*) AS n FROM locations"),
     ]);
-    stats = { products: products?.n ?? 0, categories: categories?.n ?? 0, nutrition: nutrition?.n ?? 0, locations: locations?.n ?? 0 };
+    stats = { products, categories, nutrition, locations };
   } catch { /* Keep the admin shell usable if a stats query fails. */ }
 
   const modules = [
