@@ -47,12 +47,6 @@ export default function Home() {
           <div className="index-hero-video-overlay" />
           <div className="index-grid-lines" />
           <div className="container index-hero-inner">
-            <div className="hero-logo-lockup">
-              <a href="/" aria-label="Cook Out Index home">
-                <span className="hero-logo-mark">CO</span>
-                <span className="hero-logo-type">COOK OUT <b>INDEX</b></span>
-              </a>
-            </div>
             <div className="index-hero-copy">
               <div className="index-kicker"><span /> INDEPENDENT MENU INTELLIGENCE · 2026</div>
               <h1>The Cook Out<br /><em>menu, decoded.</em></h1>
@@ -62,8 +56,8 @@ export default function Home() {
             </div>
             <div className="index-hero-visual" aria-hidden="true">
               <div className="hero-feature-photo">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85" alt="Real Cook Out restaurant visit with milkshakes, photographed at Cook Out" />
-                <div className="hero-feature-caption"><span>REAL COOK OUT</span><strong>Restaurant · Shakes · Burgers</strong><small>Verified real-world Cook Out photograph</small></div>
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85" alt="Close-up burger photograph for menu inspiration" />
+                <div className="hero-feature-caption"><span>THE MENU EDIT</span><strong>Big flavor. No guesswork.</strong><small>Explore menu items, nutrition and price information</small></div>
               </div>
               <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span>
               <span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span>
