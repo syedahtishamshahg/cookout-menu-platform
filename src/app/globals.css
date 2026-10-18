@@ -350,3 +350,13 @@ html.dark .card,.dark [class*="card"]{background:#1a1816;border-color:#3a342f}
  .new-home .visual-tag b{font-size:12px}
  .new-home .tag-two{right:-2px}.new-home .tag-four{right:-2px}.new-home .tag-five{left:-2px}
 }
+
+
+/* Fix hero visual overlap: keep the food photo unobstructed and remove oversized location tag. */
+.new-home .tag-five{display:none!important}
+.new-home .index-hero-visual{min-width:0;isolation:isolate}
+.new-home .hero-feature-photo{width:min(470px,92%);aspect-ratio:3/2;max-height:440px}
+.new-home .hero-feature-caption{left:16px;right:16px;bottom:16px;max-width:calc(100% - 32px);min-height:0;height:auto;transform:none;clip-path:none}
+.new-home .hero-feature-caption strong{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:900px){.new-home .hero-feature-photo{aspect-ratio:5/4;max-height:none}}
+@media(max-width:560px){.new-home .hero-feature-photo{aspect-ratio:4/3}}
