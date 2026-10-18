@@ -63,7 +63,6 @@ export default function Home() {
               <span className="visual-tag tag-two">AI<br /><b>24/7</b> GUIDE</span>
               <span className="visual-tag tag-three">SOURCE<br /><b>FIRST</b></span>
               <span className="visual-tag tag-four">NUTRITION<br /><b>CHECKED</b></span>
-              <span className="visual-tag tag-five">LOCATION<br /><b>SMART</b></span>
             </div>
           </div>
           <div className="container hero-ticker"><span>SCROLL TO EXPLORE</span><i /> <span>UNOFFICIAL · INDEPENDENT · SOURCE-AWARE</span></div>
