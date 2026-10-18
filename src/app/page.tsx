@@ -40,7 +40,7 @@ export default function Home() {
       <main>
         <section className="index-hero">
           <video className="index-hero-video" autoPlay muted loop playsInline preload="auto"
-            poster="https://commons.wikimedia.org/wiki/Special:Redirect/file/P20240118AS-0713.jpg"
+            poster="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85"
             aria-hidden="true">
             <source src="https://videos.pexels.com/video-files/5920312/5920312-hd_1920_1080_25fps.mp4" type="video/mp4" />
           </video>
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <div className="index-hero-visual" aria-hidden="true">
               <div className="hero-feature-photo">
-                <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/P20240118AS-0713.jpg" alt="Real Cook Out restaurant visit with milkshakes, photographed at Cook Out" />
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85" alt="Real Cook Out restaurant visit with milkshakes, photographed at Cook Out" />
                 <div className="hero-feature-caption"><span>REAL COOK OUT</span><strong>Restaurant · Shakes · Burgers</strong><small>Verified real-world Cook Out photograph</small></div>
               </div>
               <span className="visual-tag tag-one">MENU<br /><b>18+</b> ITEMS</span>
