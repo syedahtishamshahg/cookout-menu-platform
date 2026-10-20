@@ -9,6 +9,8 @@ type Item = {
   description?: string | null;
   category_name?: string | null;
   last_checked?: string | null;
+  image_url?: string | null;
+  image_alt?: string | null;
 };
 
 export default function MenuExplorer({ items }: { items: Item[] }) {
@@ -36,9 +38,9 @@ export default function MenuExplorer({ items }: { items: Item[] }) {
         {filtered.length > 0 ? (
           <div className="menu-card-grid">
             {filtered.map((item) => {
-              const photo: string | undefined = undefined; // Do not show unverified or mismatched product photography.
+              const photo = item.image_url?.trim() || undefined;
               return <Link className="menu-item-card" href={"/menu/" + item.slug} key={item.slug}>
-                <div className="menu-item-art">{photo ? <><img src={photo} alt={item.name + " representative food photo"} loading="lazy" decoding="async" /><span>PHOTO NOT VERIFIED</span></> : <div className="menu-photo-unavailable" role="img" aria-label={"Photo unavailable for " + item.name}>Photo unavailable</div>}</div>
+                <div className="menu-item-art">{photo ? <><img src={photo} alt={item.image_alt?.trim() || item.name + " photo"} loading="lazy" decoding="async" /><span>MENU ITEM PHOTO</span></> : <div className="menu-photo-unavailable" role="img" aria-label={"Photo unavailable for " + item.name}>Photo unavailable</div>}</div>
                 <div className="menu-item-content">
                   <div className="menu-item-meta"><span>{item.category_name || "Menu"}</span>{item.last_checked && <span>Checked {item.last_checked}</span>}</div>
                   <h3>{item.name}</h3>
