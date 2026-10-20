@@ -72,7 +72,7 @@ export default function MenuExplorer({ items }: { items: Item[] }) {
 const categoryKey = (item.category_name || "").trim().toLowerCase();
 const photo = PHOTO_BY_ITEM[item.slug] || CATEGORY_PHOTO[categoryKey];
               return <Link className="menu-item-card" href={"/menu/" + item.slug} key={item.slug}>
-                <div className="menu-item-art"><img src={photo} alt="" loading="lazy" decoding="async" /><span>REAL FOOD PHOTO</span></div>
+                <div className="menu-item-art">{photo ? <><img src={photo} alt={item.name + " representative food photo"} loading="lazy" decoding="async" /><span>REPRESENTATIVE PHOTO</span></> : <div className="menu-photo-unavailable" role="img" aria-label={"Photo unavailable for " + item.name}>Photo unavailable</div>}</div>
                 <div className="menu-item-content">
                   <div className="menu-item-meta"><span>{item.category_name || "Menu"}</span>{item.last_checked && <span>Checked {item.last_checked}</span>}</div>
                   <h3>{item.name}</h3>
