@@ -1,3 +1,38 @@
-import {absoluteUrl,SITE_NAME} from "@/lib/seo";
-export function organizationJsonLd(){return {"@context":"https://schema.org","@type":"Organization","name":SITE_NAME,"url":absoluteUrl("/")};}
-export function breadcrumbJsonLd(items:{name:string;path:string}[]){return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items.map((x,i)=>({"@type":"ListItem",position:i+1,name:x.name,item:absoluteUrl(x.path)}))};}
+import { absoluteUrl, SITE_NAME } from "@/lib/seo";
+
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: absoluteUrl("/"),
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((x, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: x.name,
+      item: absoluteUrl(x.path),
+    })),
+  };
+}
+
+export function faqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((x) => ({
+      "@type": "Question",
+      name: x.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: x.answer,
+      },
+    })),
+  };
+}
