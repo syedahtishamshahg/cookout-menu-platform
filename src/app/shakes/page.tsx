@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import { menuItems } from "@/lib/menu";
 import { faqJsonLd } from "@/lib/structured-data";
@@ -40,7 +40,7 @@ export default function ShakesPage() {
       </nav>
 
       <div className="eyebrow" style={{ marginTop: 16 }}>The 40+ Fancy Milkshake Bible</div>
-      <h1>Official Cook Out Milkshake Flavors & Calories</h1>
+      <h1>Cook Out Milkshake Flavors & Calories</h1>
       <p style={{ maxWidth: 760, fontSize: 17, lineHeight: 1.7 }} className="muted">
         Cook Out is legendary across the Southeast for its hand-spun, thick milkshakes made with real dairy soft-serve, fresh fruit chunks, and crushed brand-name candy bars.
       </p>
