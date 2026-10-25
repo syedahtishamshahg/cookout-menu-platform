@@ -1,0 +1,4 @@
+.open-next/** linguist-vendored
+.wrangler/** linguist-vendored
+*.js linguist-generated
+package-lock.json linguist-generated

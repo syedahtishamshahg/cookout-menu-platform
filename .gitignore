@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+.open-next/
+.wrangler/
+phase1.js
+fix.js
+*.js
+*.log
